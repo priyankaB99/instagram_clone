@@ -9,18 +9,31 @@
     </head>
     <body>
         <nav>
-            <div id="header-content">
-                <img class="icon" src="assets/icon2.png" alt="instagram icon">
-                <img id="logo" src="assets/ig-logo.png" alt="instagram logo">
-                <input placeholder="Search">
-                <img class="icon" src="assets/icon2.png" alt="instagram icon">
-                <img class="icon" src="assets/icon2.png" alt="instagram icon">
-                <img class="icon" src="assets/icon2.png" alt="instagram icon">
+            <div class ="row" id="header-content">
+                <div class="col-xs-4">
+                    <img class="icon" src="assets/icon2.png" alt="instagram icon">
+                    <img id="logo" src="assets/ig-logo.png" alt="instagram logo">
+                </div>
+                <div class="col-xs-4">
+                    <input id="search-bar" placeholder="Search">
+                </div>
+                <div class="right-icons col-xs-4">
+                    <!-- <i class="far fa-heart icon2"></i> -->
+                    <img class="icon2" src="assets/icon2.png" alt="instagram icon">
+                    <img class="icon2" src="assets/icon2.png" alt="instagram icon">
+                    <img class="icon2" src="assets/icon2.png" alt="instagram icon">
+                </div>
             </div>
         </nav>
-        <div class="row">
-            <div class="col-md-8" id="main">
-                content
+        <div class="row main">
+            <div class="col-md-8" id="post">
+                <div class="photo-meta">
+                    <img class="circle-small" src="assets/user-icon.png" alt="profile picture"/>
+                    <strong class="left-space">someperson</strong>
+                </div>
+                <div>
+                    <img class="main-photo" src="assets/cat.png" alt="cat">
+                </div>
             </div>
             <div class="col-md-4" id="sidebar">
                 sidebar
