@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(248, 248, 248); /*CHECK*/
+    background-color: rgb(248, 248, 248);
     padding-bottom: 50px;
 }
 .row {
@@ -8,8 +8,13 @@ body{
 }
 nav {
     height: 60px;
-    background-color: rgb(255,255,255); /*CHECK*/
-    border: 1.5px solid rgb(218, 218, 218); /*CHECK*/ 
+    background-color: rgb(255,255,255);
+    border: 1.5px solid rgb(218, 218, 218);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; 
 }
 #header-content {
     padding: 5px 0px;
@@ -22,10 +27,15 @@ nav {
 .line {
     width: 5.5px;
     vertical-align: middle;
-    margin: 0 7px;
+    margin: 0 8px;
     margin-top: 3px;
 }
-.icon2 {
+.icon1 {
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.icon2, .icon1 {
     width: 35px;
 }
 .icon2 {
@@ -39,20 +49,12 @@ nav {
 }
 .right-icons {
     margin-top: 5px;
-    padding-left: 12%;
     padding-top: 8px;
 }
 #logo {
     width: 100px;
     height: 30px;
     margin-top: 8px;
-   
-    /* margin: 0;
-    position: absolute;
-    top: 52%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-     css block above from https://www.w3schools.com/howto/howto_css_center-vertical.asp */
 }
 input {
     height: 30px;
@@ -65,27 +67,32 @@ input {
     background: rgb(250,250,250);
     border: solid 1.5px rgb(219,219,219);
     border-radius: 3px;
-    color: rgb(38,38,38); 
-
-    /* margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    css block above from https://www.w3schools.com/howto/howto_css_center-vertical.asp */
+    color: rgb(38,38,38);
 }
-
+.search-icon {
+    position: absolute;
+    bottom: 16.5px;
+    left: 127px;
+}
+input:focus {
+    background: rgb(194, 194, 194);
+}
 .main {
-    margin-top: 25px;
+    margin-top: 95px;
     max-width: 970px;
+}
+#main-content {
+    margin-bottom: 50px;
+}
+#sidebar {
+   padding-left: 29px;
 }
 .no-padding {
     padding: 0;
 }
-#post, .suggested {
-    background-color: rgb(255,255,255); /*CHECK*/
-    border: 1.5px solid rgb(226, 226, 226); /*CHECK*/ 
+.post, .suggested, .stories-scroll {
+    background-color: rgb(255,255,255); 
+    border: 1.5px solid rgb(226, 226, 226);
     border-radius: 3px;
 }
 .photo-meta {
@@ -100,11 +107,19 @@ input {
 }
 .circle-big {
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
+}
+.circle-bigger {
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
 }
 .left-space {
     margin-left: 10px;
+}
+.small-left-space {
+    margin-left: 5px;
 }
 .main-photo {
     width: 100%;
@@ -132,6 +147,9 @@ input {
 .dull {
     color: rgb(146, 146, 146);
 }
+.duller {
+    color: rgb(184, 184, 184);
+}
 hr {
     margin: 10px auto;
 }
@@ -146,8 +164,10 @@ hr {
     vertical-align: text-top;
 }
 .suggested {
-    margin-top: 60px;
     padding: 15px;
+}
+.post {
+    margin-bottom:50px;
 }
 .col3 {
     width: 31%;
@@ -178,3 +198,63 @@ button {
     right: 18px;
     bottom: 115px;
 }
+
+.username-meta {
+    margin-bottom: 19px;
+}
+.username {
+    display: inline-block;
+    vertical-align: middle;
+}
+.small-margin {
+    margin-top: 3px;
+}
+
+.stories-list {
+    margin-top: 15px;
+    height: 285px;
+    overflow-y:auto;
+    scrollbar-width: none;
+}
+/* Found how to hide scrollbar here https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+
+.story-listing {
+    margin-bottom: 10px;
+}
+.hr2 {
+    margin: 2px;
+}
+.links{
+    margin: 15px 0;
+    width: 80%;
+}
+a {
+    color: unset;
+}
+
+.stories-scroll {
+    display: none;
+}
+
+/* Found how to do media queries here https://www.w3schools.com/cssref/css3_pr_mediaquery.asp */
+@media only screen and (max-width: 1024px) {
+    #main-content {
+        margin: 20px 145px;
+    }
+    #sidebar {
+        display: none;
+    }
+
+    .stories-scroll {
+        display: block;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        margin-bottom: 15px;
+        max-height: 107px;
+    }
+    .story-listing2 {
+        display: inline-block;
+        text-align: center;
+        width: 80px;
+    }
+  }
